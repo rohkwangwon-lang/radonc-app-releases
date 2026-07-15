@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <title>RadOnc Guideline · 선량 계산기</title>
+    <meta name="description" content="QUANTEC·RTOG·NRG 기반 OAR 선량 제약 및 재치료(Re-RT) 누적 선량 계산기" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+
+    <!-- iOS PWA 메타 -->
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="RadOnc" />
+
+    <!-- 폰트는 시스템 폰트 사용 (Pretendard 호환) -->
+    <style>
+      html, body, #root {
+        height: 100%;
+        /* iOS 17+ dynamic viewport — home indicator 영역 제외한 실제 화면 */
+        height: 100dvh;
+        min-height: 100dvh;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Pretendard, system-ui, sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        background: #f8fafc;
+        /* iOS PWA — 가로 safe-area 만 body 차원에서 (상·하는 컴포넌트 내부에서 처리) */
+        padding-left: env(safe-area-inset-left, 0);
+        padding-right: env(safe-area-inset-right, 0);
+      }
+      /* PWA standalone 모드에서 컨텐츠가 노치/홈인디케이터에 잘리지 않도록 */
+      #root {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+    <script type="module" crossorigin src="/radonc-app-releases/assets/index-B6JeazH_.js"></script>
+    <link rel="stylesheet" crossorigin href="/radonc-app-releases/assets/index-CheIIhv6.css">
+  <link rel="manifest" href="/radonc-app-releases/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
